@@ -49,6 +49,8 @@ void element :: output()
 		period=6;
 	 else if(atomicno<113)
 		period=7;
+	 else
+		period=0;
 	 switch(period)
 	 {
 		case 1 : if(atomicno==2)
@@ -125,7 +127,6 @@ void display(int atmno)
 void searchElement()
 {
   char temp[20];
-  int atmno=0;
   clrscr();
   cout<<"\n\n\tSearch for......   => ";
   gotoxy(5,22);
@@ -134,6 +135,7 @@ void searchElement()
   cin>>temp;
   if(isdigit(temp[0]))
   {
+	 int atmno=0;
 	 for(int i=0;temp[i]!='\0';i++)
 		if(isdigit(temp[i]))
 			atmno=(atmno*10)+(temp[i]-48);
